@@ -1,4 +1,13 @@
-<div *ngFor="#tweet of tweets">
-  <h3>{{ tweet.user.name  }}</h3>
-  <p>{{ tweet.text }}</p>
+<div class="card-columns">
+  <div *ngFor="#tweet of tweets" class="card">
+    <!--img class="card-img-top" data-src="..." alt="Card image cap"-->
+    <div class="card-block">
+      <h4 class="card-title">@{{ tweet.user.screen_name }}</h4>
+      <p class="card-text">{{ tweet.text }}</p>
+      <p class="card-text">
+        <small class="text-muted"><i class="fa fa-heart sp-color-red"></i> {{ tweet.retweet_count }}</small>
+        <small class="text-muted"><i class="fa fa-retweet sp-color-green"></i> {{ tweet.favorite_count }}</small>
+      </p>
+    </div>
+  </div>
 </div>
