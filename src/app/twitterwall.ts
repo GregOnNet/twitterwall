@@ -1,21 +1,10 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-
+import {HTTP_PROVIDERS, HTTP_BINDINGS} from 'angular2/http';
+import {TweetsWall} from './tweets/tweets-wall.component';
 
 @Component({
   selector: 'twitterwall-app',
-  providers: [],
+  directives: [TweetsWall],
   templateUrl: 'app/twitterwall.html',
-  directives: [ROUTER_DIRECTIVES],
-  pipes: []
 })
-@RouteConfig([
-
-])
-export class TwitterwallApp {
-  defaultMeaning: number = 42;
-  
-  meaningOfLife(meaning?: number) {
-    return `The meaning of life is ${meaning || this.defaultMeaning}`;
-  }
-}
+export class TwitterwallApp { }

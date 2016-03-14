@@ -18,6 +18,9 @@
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
     "reflect-metadata": "0.1.2",
+    "request": "^2.69.0",
+    "restify": "^4.0.4",
+    "restify-routing": "^0.3.8",
     "rxjs": "5.0.0-beta.2",
     "systemjs": "0.19.20",
     "zone.js": "0.5.15"

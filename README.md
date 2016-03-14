@@ -1,2 +1,3 @@
-# twitterwall
-Displaying tweets filtered by hashtags
+# Twitterwall
+
+Displaying tweets filtered by hashtags.
