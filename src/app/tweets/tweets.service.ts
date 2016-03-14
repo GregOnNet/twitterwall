@@ -1,5 +1,4 @@
 import {Injectable}     from 'angular2/core';
-import {AppCredentials} from '../app.credentials';
 import {Observable}     from 'rxjs/Observable';
 import {Http, Headers, RequestOptions} from 'angular2/http';
 import "rxjs/add/operator/map";
