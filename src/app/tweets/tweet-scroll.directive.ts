@@ -9,8 +9,8 @@ export class TweetWallScrollHorizontal {
 
   @Input() set spScrollHorizontal(condition: boolean) {
     let tweetWall = this._viewContainer.element.nativeElement;
-    // screen-height - nav.height - padding-top - padding-bottom - footer-height
-    tweetWall.style.height = `${screen.height - 60 - 8 - 8 - 24}px`;
-    tweetWall.style.width = `${screen.width}px`;
+    // screen-availHeight - nav.height - padding-top - padding-bottom - footer-height
+    let takenSpace = 60 + 8 + 8 + 24;
+    tweetWall.style.height = `${screen.availHeight - takenSpace}px`;
   }
 }
