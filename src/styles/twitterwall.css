@@ -6,6 +6,31 @@
   margin-left:5px
 }
 
+.sp-top-logo {
+  background-image: url(../img/spartakiade-logo_32_32.png);
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 50%;
+  margin-left: -12px;
+  margin-top: 4px;
+}
+
+.sp-navbar {
+  height: 60px;
+  border-radius: 0;
+  background-color: #FFF;
+  border-bottom: 1px solid #777;
+}
+
+.sp-brand-callout {
+  float: left;
+  line-height: 1.8;
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  color:#C0392B;
+}
+
 .sp-tweet-wall-container {
   background-color:#FFF;
   border-radius: 4px;
