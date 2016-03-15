@@ -90,6 +90,12 @@
   color:#CF5037
 }
 
+/* Footer */
+.footer-link {
+  color:#FFF;
+  font-size: 12px;
+}
+
 /* Loading Spinner */
 .sp-cube-grid {
   width: 80px;
