@@ -34,6 +34,7 @@ function tweet(t) {
 
   return {
    creator: t.user.screen_name,
+   profile_image_url_https: t.user.profile_image_url_https,
    text: t.text,
    created_at: t.created_at,
    retweet_count: t.retweet_count,
