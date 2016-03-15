@@ -8,9 +8,15 @@ export class TweetWallScrollHorizontal {
   ) { }
 
   @Input() set spScrollHorizontal(condition: boolean) {
-    let tweetWall = this._viewContainer.element.nativeElement;
-    // screen-availHeight - nav.height - padding-top - padding-bottom - footer-height
-    let takenSpace = 60 + 8 + 8 + 24;
-    tweetWall.style.height = `${screen.availHeight - takenSpace}px`;
+
+    var tweetWall = this._viewContainer.element.nativeElement;
+    var tweetWallPaddingTop = 8;
+    var tweetWallPaddingBottom = 8;
+
+    var windowHeight = window.innerHeight;
+    var navbarHeight = document.getElementsByClassName("sp-navbar")[0]['offsetHeight'];
+    var footerHeight = document.getElementsByTagName("footer")[0]['offsetHeight'];
+
+    tweetWall.style.height = `${windowHeight - navbarHeight - footerHeight - tweetWallPaddingTop - tweetWallPaddingBottom - 1}px`;
   }
 }
