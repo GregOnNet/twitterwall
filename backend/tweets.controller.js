@@ -1,20 +1,22 @@
 'use strict';
 
 var restify = require('restify');
-var request = require('request');
+var Twit = require('twit');
+var config = require('./config');
+
+var T = new Twit(config.credentials);
 
 exports.getAll = function(req, res, next){
-  var options = {
-    url: 'https://api.twitter.com/1.1/search/tweets.json?&result_type=recent&q=%23spartakiade',
-    headers: {
-      'Authorization': ''
-    }
-  };
+  var params = {
+    q: '#spartakiade',
+    count: 100,
+    result_type: 'recent'
+  }
 
-  request(options, function(err, response, body) {
-    var tweets = JSON.parse(body).statuses.map(tweet);
+  T.get('search/tweets', params, function(err, data, response) {
+    var tweets = data.statuses.map(tweet);
     res.json(tweets);
-  });
+  })
 }
 
 function tweet(t) {
