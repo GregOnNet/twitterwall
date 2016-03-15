@@ -7,10 +7,11 @@ var config = require('./config');
 var T = new Twit(config.credentials);
 
 exports.getAll = function(req, res, next){
+  //pass params or set default values
   var params = {
-    q: '#spartakiade',
-    count: 100,
-    result_type: 'recent'
+    q: req.query.q || '#spartakiade',
+    count: req.query.count || 100,
+    result_type: req.query.result_type || 'recent'
   }
 
   T.get('search/tweets', params, function(err, data, response) {

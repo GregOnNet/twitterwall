@@ -5,7 +5,7 @@ var restify = require('restify');
 var RestifyRouter = require('restify-routing')
 var server = restify.createServer();
 
-server.use(restify.bodyParser());
+server.use(restify.queryParser());
 server.use(restify.CORS({}));
 
 
