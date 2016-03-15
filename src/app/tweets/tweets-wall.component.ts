@@ -2,7 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {Tweets} from './tweets.service';
-import {TweetBeautifier} from './tweet-beatifier.pipe';
+import {TweetBeautifier} from './tweet-beautifier.pipe';
 import {TweetedAgo} from './tweeted-ago.pipe';
 
 @Component({
