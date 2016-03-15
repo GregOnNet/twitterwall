@@ -14,6 +14,7 @@ export class TweetedAgo implements PipeTransform {
     if (interval > 1) return `vor ${interval} Monaten`;
 
     interval = Math.floor(seconds / 86400);
+    if (interval == 1) return `vor einem Tag`;
     if (interval >= 1) return `vor ${interval} Tagen`;
 
     interval = Math.floor(seconds / 3600);
