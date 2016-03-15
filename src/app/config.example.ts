@@ -3,4 +3,5 @@ export class AppConfig {
   static search = '#spartakiade';
   static maxAge = 2; //days
   static maxCount = 50;
+  static noRetweeted = true; //do not show retweeted statuses
 }

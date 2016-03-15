@@ -15,9 +15,21 @@ exports.getAll = function(req, res, next){
   }
 
   T.get('search/tweets', params, function(err, data, response) {
-    var tweets = data.statuses.map(tweet);
+    var tweets = data.statuses;
+
+    //remove retweeted status if *noretweeted* param is set
+    if(req.query.noretweeted == '1'){
+      tweets = tweets.filter(removeRetweeted)
+    }
+
+    tweets = tweets.map(tweet);
+
     res.json(tweets);
   })
+}
+
+function removeRetweeted(t){
+  return !t.hasOwnProperty('retweeted_status');
 }
 
 function tweet(t) {
@@ -41,6 +53,6 @@ function tweet(t) {
    retweet_count: t.retweet_count,
    favorite_count: t.favorite_count,
    has_image: has_image,
-   image_url_https: image_url_https
+   image_url_https: image_url_https,
   };
 }

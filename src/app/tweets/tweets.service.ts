@@ -22,6 +22,7 @@ export class Tweets {
     var params = new URLSearchParams();
     params.set('q', encodeURIComponent(q));
     params.set('count', AppConfig.maxCount.toString());
+    params.set('noretweeted', (AppConfig.noRetweeted)?'1':'0');
 
     return this._http.get(AppConfig.apiPath + 'tweets', { search: params })
                      .map(res => res.json());
