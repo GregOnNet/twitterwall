@@ -1,6 +1,8 @@
 <div class="card-columns sp-tweet-wall-inner">
   <div *ngFor="#tweet of tweets" class="card">
-    <img *ngIf="tweet.has_image" class="card-img-top sp-card-img-fit" data-src="{{ tweet.image_url_https }}" alt="Card image cap">
+    <div class="sp-card-image">
+      <img *ngIf="tweet.has_image" class="card-img-top sp-card-img-fit" data-src="{{ tweet.image_url_https }}" alt="Card image cap">
+    </div>
     <div class="card-block">
       <p class="card-text" [innerHtml]="tweet.text | beautifyTweet"></p>
       <hr>

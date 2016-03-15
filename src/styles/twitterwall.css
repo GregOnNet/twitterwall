@@ -23,6 +23,11 @@
   border-bottom: 1px solid #777;
 }
 
+.sp-card-image {
+  max-height: 250px;
+  overflow:hidden;
+}
+
 .sp-brand-callout {
   float: left;
   line-height: 1.8;
