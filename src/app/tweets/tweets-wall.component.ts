@@ -3,13 +3,14 @@ import {CORE_DIRECTIVES} from 'angular2/common';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {Tweets} from './tweets.service';
 import {TweetBeautifier} from './tweet-beatifier.pipe';
+import {TweetedAgo} from './tweeted-ago.pipe';
 
 @Component({
   selector: 'sp-tweets-wall',
   templateUrl: '/app/tweets/tweets-wall.component.html',
   providers: [HTTP_PROVIDERS, Tweets],
   directives: [CORE_DIRECTIVES],
-  pipes: [TweetBeautifier]
+  pipes: [TweetBeautifier, TweetedAgo]
 })
 export class TweetsWall implements OnInit {
   tweets: Array<any>;
@@ -19,5 +20,6 @@ export class TweetsWall implements OnInit {
   ngOnInit() {
     this._tweets.getAll()
                 .subscribe(tweets => this.tweets = tweets);
+
   }
 }

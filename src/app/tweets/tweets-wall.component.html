@@ -8,12 +8,17 @@
       <div class="sp-card-right-content">
         <p class="card-text">@{{ tweet.creator }}</p>
         <p class="card-text">
+          <small class="text-muted">
+            {{ tweet.created_at | tweeted_ago}}
+          </small>
           <small *ngIf="tweet.favorite_count > 0" class="text-muted">
             <i class="fa fa-heart sp-tweet-color-red"></i>
-            {{ tweet.favorite_count }}</small>
+            {{ tweet.favorite_count }}
+          </small>
           <small *ngIf="tweet.retweet_count > 0" class="text-muted">
             <i class="fa fa-retweet sp-tweet-color-green"></i>
-            {{ tweet.retweet_count }}</small>
+            {{ tweet.retweet_count }}
+          </small>
         </p>
       </div>
     </div>
