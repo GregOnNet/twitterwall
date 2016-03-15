@@ -1,7 +1,19 @@
-.sp-color-red {
+.sp-tweet-color-red {
   color: #e81c4f;
 }
 
-.sp-color-green {
+.sp-tweet-color-green {
   color: #19cf86;
+}
+
+.sp-card-img-fit {
+  width: 100%;
+}
+
+.sp-bg-red {
+  background-color:#CF5037
+}
+
+.sp-color-red {
+  color:#CF5037
 }
