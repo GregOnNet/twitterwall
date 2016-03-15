@@ -4,12 +4,13 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 import {Tweets} from './tweets.service';
 import {TweetBeautifier} from './tweet-beautifier.pipe';
 import {TweetedAgo} from './tweeted-ago.pipe';
+import {TweetWallScrollHorizontal} from './tweet-scroll.directive';
 
 @Component({
   selector: 'sp-tweets-wall',
   templateUrl: '/app/tweets/tweets-wall.component.html',
   providers: [HTTP_PROVIDERS, Tweets],
-  directives: [CORE_DIRECTIVES],
+  directives: [CORE_DIRECTIVES, TweetWallScrollHorizontal],
   pipes: [TweetBeautifier, TweetedAgo]
 })
 export class TweetsWall implements OnInit {
