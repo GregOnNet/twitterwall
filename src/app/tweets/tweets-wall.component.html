@@ -3,7 +3,7 @@
     <img *ngIf="tweet.has_image" class="card-img-top sp-card-img-fit" data-src="{{ tweet.image_url_https }}" alt="Card image cap">
     <div class="card-block">
       <h4 class="card-title">@{{ tweet.creator }}</h4>
-      <p class="card-text">{{ tweet.text }}</p>
+      <p class="card-text" [innerHtml]="tweet.text | beautifyTweet"></p>
       <p class="card-text">
         <small *ngIf="tweet.favorite_count > 0" class="text-muted"><i class="fa fa-heart sp-tweet-color-red"></i> {{ tweet.favorite_count }}</small>
         <small *ngIf="tweet.retweet_count > 0" class="text-muted"><i class="fa fa-retweet sp-tweet-color-green"></i> {{ tweet.retweet_count }}</small>

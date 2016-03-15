@@ -2,12 +2,14 @@ import {Component, OnInit} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {Tweets} from './tweets.service';
+import {TweetBeautifier} from './tweet-beatifier.pipe';
 
 @Component({
   selector: 'sp-tweets-wall',
   templateUrl: '/app/tweets/tweets-wall.component.html',
   providers: [HTTP_PROVIDERS, Tweets],
-  directives: [CORE_DIRECTIVES]
+  directives: [CORE_DIRECTIVES],
+  pipes: [TweetBeautifier]
 })
 export class TweetsWall implements OnInit {
   tweets: Array<any>;
