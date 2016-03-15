@@ -1,17 +1,21 @@
 <div class="card-columns sp-tweet-wall-inner">
   <div *ngFor="#tweet of tweets" class="card">
-    <img *ngIf="tweet.has_image" class="card-img-left sp-card-img-fit" data-src="{{ tweet.image_url_https }}" alt="Card image cap">
+    <img *ngIf="tweet.has_image" class="card-img-top sp-card-img-fit" data-src="{{ tweet.image_url_https }}" alt="Card image cap">
     <div class="card-block">
-      <h4 class="card-title">@{{ tweet.creator }}</h4>
       <p class="card-text" [innerHtml]="tweet.text | beautifyTweet"></p>
-      <p class="card-text">
-        <small *ngIf="tweet.favorite_count > 0" class="text-muted">
-          <i class="fa fa-heart sp-tweet-color-red"></i>
-          {{ tweet.favorite_count }}</small>
-        <small *ngIf="tweet.retweet_count > 0" class="text-muted">
-          <i class="fa fa-retweet sp-tweet-color-green"></i>
-          {{ tweet.retweet_count }}</small>
-      </p>
+      <hr>
+      <img class="sp-card-left-content" data-src="{{ tweet.profile_image_url_https }}" alt="profile image">
+      <div class="sp-card-right-content">
+        <p class="card-text">@{{ tweet.creator }}</p>
+        <p class="card-text">
+          <small *ngIf="tweet.favorite_count > 0" class="text-muted">
+            <i class="fa fa-heart sp-tweet-color-red"></i>
+            {{ tweet.favorite_count }}</small>
+          <small *ngIf="tweet.retweet_count > 0" class="text-muted">
+            <i class="fa fa-retweet sp-tweet-color-green"></i>
+            {{ tweet.retweet_count }}</small>
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -23,12 +27,14 @@
     <div class="col-md-8">
       <div class="card-block">
         <h4 class="card-title">@me</h4>
-        <p class="card-text">asfsdfasdasd   a asd asdas d afasf  fsa asd asfsdfsdfsefasdadadsadasdasdadfsdfds f  g sdgsdf asdf sadfsadfsf sdfsaf asdfsdfsddasda asd asd f</p>
+        <p class="card-text">asfsdfasdasd a asd asdas d afasf fsa asd asfsdfsdfsefasdadadsadasdasdadfsdfds f g sdgsdf asdf sadfsadfsf sdfsaf asdfsdfsddasda asd asd f</p>
         <p class="card-text">
           <small class="text-muted">
-            <i class="fa fa-heart sp-tweet-color-red"></i> 3</small>
+            <i class="fa fa-heart sp-tweet-color-red"></i>
+            3</small>
           <small class="text-muted">
-            <i class="fa fa-retweet sp-tweet-color-green"></i> 2</small>
+            <i class="fa fa-retweet sp-tweet-color-green"></i>
+            2</small>
         </p>
       </div>
     </div>
@@ -42,12 +48,14 @@
     <div class="col-md-12">
       <div class="card-block">
         <h4 class="card-title">@me</h4>
-        <p class="card-text">asfsdfasdasd   a asd asdas d afasf  fsa asd asfsdfsdfsefasdadadsadasdasdadfsdfds f  g sdgsdf asdf sadfsadfsf sdfsaf asdfsdfsddasda asd asd f</p>
+        <p class="card-text">asfsdfasdasd a asd asdas d afasf fsa asd asfsdfsdfsefasdadadsadasdasdadfsdfds f g sdgsdf asdf sadfsadfsf sdfsaf asdfsdfsddasda asd asd f</p>
         <p class="card-text">
           <small class="text-muted">
-            <i class="fa fa-heart sp-tweet-color-red"></i> 3</small>
+            <i class="fa fa-heart sp-tweet-color-red"></i>
+            3</small>
           <small class="text-muted">
-            <i class="fa fa-retweet sp-tweet-color-green"></i> 2</small>
+            <i class="fa fa-retweet sp-tweet-color-green"></i>
+            2</small>
         </p>
       </div>
     </div>
@@ -58,12 +66,14 @@
     <div class="col-md-12">
       <div class="card-block">
         <h4 class="card-title">@me</h4>
-        <p class="card-text">asfsdfasdasd   a asd asdas d afsddasda asd asd f</p>
+        <p class="card-text">asfsdfasdasd a asd asdas d afsddasda asd asd f</p>
         <p class="card-text">
           <small class="text-muted">
-            <i class="fa fa-heart sp-tweet-color-red"></i> 3</small>
+            <i class="fa fa-heart sp-tweet-color-red"></i>
+            3</small>
           <small class="text-muted">
-            <i class="fa fa-retweet sp-tweet-color-green"></i> 2</small>
+            <i class="fa fa-retweet sp-tweet-color-green"></i>
+            2</small>
         </p>
       </div>
     </div>

@@ -27,6 +27,16 @@
   width: 100%;
 }
 
+.sp-card-left-content {
+  float: left;
+  margin-right: 4px;
+  margin-bottom: 16px;
+}
+
+.sp-card-right-content p {
+  margin-bottom: 0;
+}
+
 .sp-bg-red {
   background-color:#CF5037
 }
