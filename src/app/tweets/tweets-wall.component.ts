@@ -19,8 +19,11 @@ export class TweetsWall implements OnInit {
   constructor(private _tweets: Tweets) { }
 
   ngOnInit() {
-    this._tweets.getAll()
-                .subscribe(tweets => this.tweets = tweets);
-
+    this.refreshTweets();
   }
+
+  refreshTweets():void {
+    this._tweets.getAll().subscribe(tweets => this.tweets = tweets);
+  }
+
 }
