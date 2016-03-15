@@ -2,6 +2,10 @@
   margin-top: 15px;
 }
 
+.sp-right-margin {
+  margin-left:5px
+}
+
 .sp-tweet-wall-container {
   background-color:#FFF;
   border-radius: 4px;
