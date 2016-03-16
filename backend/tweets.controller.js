@@ -3,6 +3,7 @@
 var restify = require('restify');
 var Twit = require('twit');
 var config = require('./config');
+var exiles = require('./twitter-blacklist');
 
 var T = new Twit(config.credentials);
 
@@ -12,24 +13,36 @@ exports.getAll = function(req, res, next){
     q: req.query.q || '#spartakiade',
     count: req.query.count || 100,
     result_type: req.query.result_type || 'recent'
-  }
+  };
 
   T.get('search/tweets', params, function(err, data, response) {
     var tweets = data.statuses;
 
     //remove retweeted status if *noretweeted* param is set
-    if(req.query.noretweeted == '1'){
-      tweets = tweets.filter(removeRetweeted)
-    }
+    if(req.query.noretweeted == '1')
+      tweets = tweets.filter(removeRetweeted);
 
     tweets = tweets.map(tweet);
 
+    if(exiles)
+      tweets = tweets.filter(removeExiles);
+
+    console.log(tweets);
     res.json(tweets);
-  })
+  });
+};
+
+function removeRetweeted(t) {
+  return !t.hasOwnProperty('retweeted_status');
 }
 
-function removeRetweeted(t){
-  return !t.hasOwnProperty('retweeted_status');
+function removeExiles(tweet) {
+  var isGranted = true;
+  exiles.forEach(function(exile) {
+    if(tweet.creator.toLowerCase() === exile)
+      isGranted = false;
+  });
+  return isGranted;
 }
 
 function tweet(t) {
