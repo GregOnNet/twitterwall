@@ -1,9 +1,11 @@
-import {Directive, Input} from 'angular2/core';
-import {ElementRef, ViewContainerRef} from 'angular2/core';
+import {Directive, Input, Output} from 'angular2/core';
+import {EventEmitter, ElementRef, ViewContainerRef} from 'angular2/core';
+import {AppConfig} from '../config';
 
 @Directive({ selector: '[spScrollHorizontal]' })
 export class TweetWallScrollHorizontal {
-  private _moveIntervall: number = 4 * 1000;
+  @Output() reachedEnd: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   constructor(
     private _viewContainer: ViewContainerRef
   ) { }
@@ -19,7 +21,7 @@ export class TweetWallScrollHorizontal {
 
     tweetWall.style.height = `${windowHeight - navbarHeight - footerHeight - tweetWallPaddingTop - tweetWallPaddingBottom - 1}px`;
 
-    this.startScrollIntervall(this._moveIntervall);
+    this.startScrollIntervall(AppConfig.scrollIntervall);
   }
 
   private startScrollIntervall(intervall) {
@@ -30,7 +32,9 @@ export class TweetWallScrollHorizontal {
     let scrollX = window.scrollX;
     window.scroll(window.scrollX + screen.width, 0);
 
-    if(window.scrollX == scrollX)
+    if(window.scrollX == scrollX){
+      this.reachedEnd.emit(true);
       window.scroll(0,0);
+    }
   }
 }

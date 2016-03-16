@@ -4,4 +4,5 @@ export class AppConfig {
   static maxAge = 2; //days
   static maxCount = 50;
   static noRetweeted = true; //do not show retweeted statuses
+  static scrollIntervall = 40 * 1000;  // 40 seconds
 }
