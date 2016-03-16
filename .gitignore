@@ -1,6 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 config.ts
+twitter-blacklist.json
 
 # MacOS
 .DS_Store
