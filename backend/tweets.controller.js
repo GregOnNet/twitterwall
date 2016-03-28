@@ -17,7 +17,7 @@ exports.getAll = function(req, res, next){
 
   T.get('search/tweets', params, function(err, data, response) {
     var tweets = data.statuses;
-
+    
     //remove retweeted status if *noretweeted* param is set
     if(req.query.noretweeted == '1')
       tweets = tweets.filter(removeRetweeted);
@@ -27,7 +27,6 @@ exports.getAll = function(req, res, next){
     if(exiles)
       tweets = tweets.filter(removeExiles);
 
-    console.log(tweets);
     res.json(tweets);
   });
 };
