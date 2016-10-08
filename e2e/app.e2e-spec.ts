@@ -5,10 +5,10 @@ describe('twitterwall App', function() {
 
   beforeEach(() => {
     page = new TwitterwallPage();
-  })
+  });
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('twitterwall Works!');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });

@@ -10,14 +10,13 @@ var T = new Twit(config.credentials);
 exports.getAll = function(req, res, next){
   //pass params or set default values
   var params = {
-    q: req.query.q || '#spartakiade',
+    q: req.query.q || '#devspace',
     count: req.query.count || 100,
     result_type: req.query.result_type || 'recent'
   };
-
   T.get('search/tweets', params, function(err, data, response) {
     var tweets = data.statuses;
-    
+
     //remove retweeted status if *noretweeted* param is set
     if(req.query.noretweeted == '1')
       tweets = tweets.filter(removeRetweeted);

@@ -1,5 +1,5 @@
 <div class="card-columns sp-tweet-wall-inner" [spScrollHorizontal]="true" (reachedEnd)="refreshTweets($event)">
-  <div *ngFor="#tweet of tweets" class="card">
+  <div *ngFor="let tweet of tweets" class="card">
     <div class="sp-card-image">
       <img *ngIf="tweet.has_image" class="card-img-top sp-card-img-fit" data-src="{{ tweet.image_url_https }}" alt="Card image cap">
     </div>

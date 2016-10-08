@@ -1,18 +1,17 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "mapRoot": "",
-    "module": "system",
+    "lib": ["es6", "dom"],
+    "mapRoot": "./",
+    "module": "es6",
     "moduleResolution": "node",
-    "noEmitOnError": true,
-    "noImplicitAny": false,
-    "outDir": "../dist/",
-    "rootDir": ".",
+    "outDir": "../dist/out-tsc",
     "sourceMap": true,
-    "sourceRoot": "/",
-    "target": "es5"
+    "target": "es5",
+    "typeRoots": [
+      "../node_modules/@types"
+    ]
   }
 }

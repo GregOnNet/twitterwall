@@ -1,11 +1,11 @@
-import {Pipe, PipeTransform} from 'angular2/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({name: 'tweeted_ago'})
 export class TweetedAgo implements PipeTransform {
-  transform(date: any) : any {
-    date = new Date(date).getTime()/1000;
+  transform(date: any): any {
+    date = new Date(date).getTime() / 1000;
 
-    var seconds = Math.floor(((new Date().getTime()/1000) - date)),
+    let seconds = Math.floor(((new Date().getTime() / 1000) - date)),
 
     interval = Math.floor(seconds / 31536000);
     if (interval > 1) return `vor ${interval} Jahren`;

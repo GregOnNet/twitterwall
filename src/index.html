@@ -4,25 +4,12 @@
   <meta charset="utf-8">
   <title>Twitterwall</title>
   <base href="/">
-  {{content-for 'head'}}
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="styles/twitterwall.css">
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <!-- Service worker support is disabled by default.
-       Install the worker script and uncomment to enable.
-       Only enable service workers in production.
-  <script type="text/javascript">
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/worker.js').catch(function(err) {
-        console.log('Error installing service worker: ', err);
-      });
-    }
-  </script>
-  -->
 </head>
-<body class="sp-bg-red">
+<body>
+  <body class="sp-bg-red">
   <nav class="navbar navbar-light navbar-fixed-top sp-navbar">
     <h1 class="brand sp-brand-callout pull-left">
       <i class="fa fa-hashtag"></i>spartakiade
@@ -32,7 +19,7 @@
       <i class="fa fa-twitter"></i> @spartakiade_org
     </h1>
   </nav>
-  <twitterwall-app>
+  <app-root>
     <div class="sp-cube-grid">
       <div class="sp-cube sp-cube1"></div>
       <div class="sp-cube sp-cube2"></div>
@@ -44,34 +31,12 @@
       <div class="sp-cube sp-cube8"></div>
       <div class="sp-cube sp-cube9"></div>
     </div>
-  </twitterwall-app>
+  </app-root>
 
   <footer class="footer">
     <center>
       <a href="https://spartakiade.org/rechtliche-hinweise">Impressum, Datenschutz, Urheberrecht, Haftungsausschluss</a>
     </center>
   </footer>
-  <script src="vendor/es6-shim/es6-shim.js"></script>
-  <script src="vendor/systemjs/dist/system-polyfills.js"></script>
-  <script src="vendor/angular2/bundles/angular2-polyfills.js"></script>
-  <script src="vendor/systemjs/dist/system.src.js"></script>
-  <script src="vendor/rxjs/bundles/Rx.js"></script>
-
-  <script src="vendor/angular2/bundles/angular2.dev.js"></script>
-  <script src="vendor/angular2/bundles/http.dev.js"></script>
-  <script src="vendor/angular2/bundles/router.dev.js"></script>
-
-  <script src="thirdparty/libs.js"></script>
-  <script>
-    System.config({
-      packages: {
-        app: {
-          format: 'register',
-          defaultExtension: 'js'
-        }
-      }
-    });
-    System.import('app.js').then(null, console.error.bind(console));
-  </script>
 </body>
 </html>
