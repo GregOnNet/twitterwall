@@ -10,7 +10,7 @@ var T = new Twit(config.credentials);
 exports.getAll = function(req, res, next){
   //pass params or set default values
   var params = {
-    q: req.query.q || '#devspace',
+    q: req.query.q || '#spartakiade',
     count: req.query.count || 100,
     result_type: req.query.result_type || 'recent'
   };

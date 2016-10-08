@@ -23,6 +23,7 @@ export class Tweets {
       q += ' since:' + since;
     };
 
+    params.set('q', AppConfig.search);
     params.set('count', AppConfig.maxCount.toString());
     params.set('noretweeted', (AppConfig.noRetweeted) ? '1' : '0');
 
