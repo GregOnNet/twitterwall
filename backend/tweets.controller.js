@@ -11,7 +11,7 @@ const twit = new Twit(config.credentials);
 exports.getAll = function(req, res, next) {
   //pass params or set default values
   const params = {
-    q: req.query.q || '#spartakiade',
+    q: req.query.q || '#nossued',
     count: req.query.count || 100,
     result_type: req.query.result_type || 'recent'
   };
