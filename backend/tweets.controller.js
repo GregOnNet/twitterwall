@@ -3,7 +3,8 @@
 const restify = require('restify');
 const Twit = require('twit');
 const config = require('./config');
-const exiles = require('./twitter-blacklist');
+
+const exiles = tryRequire('./twitter-blacklist', []);
 
 const twit = new Twit(config.credentials);
 
@@ -70,4 +71,13 @@ function tweet(t) {
     has_image: has_image,
     image_url_https: image_url_https
   };
+}
+
+function tryRequire(path, fallbackValue) {
+  try {
+    return require(path);
+  } catch {
+    return fallbackValue;
+  }
+
 }
