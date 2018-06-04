@@ -1,16 +1,16 @@
 'use strict';
 
-var twCtrl = require('./tweets.controller');
-var restify = require('restify');
-var RestifyRouter = require('restify-routing')
-var server = restify.createServer();
+const twCtrl = require('./tweets.controller');
+const restify = require('restify');
+const RestifyRouter = require('restify-routing')
+const server = restify.createServer();
 
 server.use(restify.queryParser());
 server.use(restify.CORS({}));
 
 
-var rootRouter = new RestifyRouter();
-var api = new RestifyRouter();
+const rootRouter = new RestifyRouter();
+const api = new RestifyRouter();
 
 
 /****************
