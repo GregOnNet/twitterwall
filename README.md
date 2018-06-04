@@ -2,11 +2,30 @@
 
 Displaying tweets filtered by hashtags.
 
+## Setup
+
+### Configure Access to Twitter API
+
+To get the Twitter Wall to run you need to enter the consumer key and the consumer secret from Twitter.
+You will get these keys from https://apps.twitter.com/ by creating a new App.
+
+Please add the **consumer key** and the **consumer secret** to `./backend/config.example.js`.
+Afterwards rename **config.example.js** to `config.js`.
+
+### Install project dependencies
+
+```bash
+$ npm i -g yarn
+$ yarn
+```
+
 ## Run
 
-```
-$ npm install
-$ npm start
+```bash
+# console one - Front End
+$ yarn start
+# console two - Backend
+$ yarn start:api
 ```
 
 ## Models
