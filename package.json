@@ -13,14 +13,14 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "^2.3",
-    "@angular/compiler": "^2.3",
-    "@angular/core": "^2.3",
-    "@angular/forms": "^2.3",
-    "@angular/http": "^2.3",
-    "@angular/platform-browser": "^2.3",
-    "@angular/platform-browser-dynamic": "^2.3",
-    "@angular/router": "3.0.2",
+    "@angular/common": "^4.2",
+    "@angular/compiler": "^4.2",
+    "@angular/core": "^4.2",
+    "@angular/forms": "^4.2",
+    "@angular/http": "^4.2",
+    "@angular/platform-browser": "^4.2",
+    "@angular/platform-browser-dynamic": "^4.2",
+    "@angular/router": "^4",
     "bootstrap": "4.0.0-alpha.2",
     "core-js": "^2.4.1",
     "font-awesome": "^4.6.3",
@@ -28,15 +28,15 @@
     "rxjs": "^5.0.0",
     "ts-helpers": "^1.1.1",
     "twit": "^2.2.5",
-    "zone.js": "^0.6.23"
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular/cli": "^1.7",
-    "@angular/compiler-cli": "^2.3",    
+    "@angular/compiler-cli": "^4.2",    
     "codelyzer": "~4.3.0",
     "restify-routing": "^0.3.8",
-    "ts-node": "1.2.1",
-    "tslint": "3.13.0",
-    "typescript": "2.0.2"
+    "ts-node": "^6.1.0",
+    "tslint": "^5.10.0",
+    "typescript": "~2.3.2"
   }
 }
