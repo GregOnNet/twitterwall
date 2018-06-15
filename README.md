@@ -4,7 +4,7 @@ Displaying tweets filtered by hashtags.
 
 ## Prerequisites
 
-> **Please note:** This app needs Node version 8 or higher.
+> **Please note:** This app needs `Node version 10` or higher.
 
 ## Setup
 
