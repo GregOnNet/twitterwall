@@ -75,7 +75,7 @@ function tweet(t) {
 function tryRequire(path, fallbackValue) {
   try {
     return require(path);
-  } catch {
+  } catch (error) {
     return fallbackValue;
   }
 }
