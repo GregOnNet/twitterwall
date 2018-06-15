@@ -1,6 +1,5 @@
 'use strict';
 
-const restify = require('restify');
 const Twit = require('twit');
 const config = require('./config');
 
@@ -79,5 +78,4 @@ function tryRequire(path, fallbackValue) {
   } catch {
     return fallbackValue;
   }
-
 }

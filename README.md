@@ -1,6 +1,10 @@
-# Twitterwall
+# Twitter-Wall
 
 Displaying tweets filtered by hashtags.
+
+## Prerequisites
+
+> **Please note:** This app needs Node version 8 or higher.
 
 ## Setup
 
